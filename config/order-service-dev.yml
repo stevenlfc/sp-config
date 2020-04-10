@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: order-service
+  cloud:
+    config:
+      override-none: true  
+server:
+  port: 8201
+  
+eureka:
+  client:
+    service-url:
+      # 默认地点, 要由公共云服务来提供
+      # 如果是私有服务器, 必须写 defaultZone
+      defaultZone: http://eureka1:2001/eureka
+      
+feign:
+  hystrix:
+    enabled: true  # 不推荐
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+
+
+
+
+
+
+
+
+
+      
+      
+      
